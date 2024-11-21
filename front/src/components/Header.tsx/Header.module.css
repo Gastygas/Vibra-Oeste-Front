@@ -1,0 +1,31 @@
+.navBg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+    padding-top: 1.5rem; /* py-6 */
+    padding-bottom: 1.5rem; /* py-6 */
+    z-index: 20;
+    background-color: aqua;
+    height: 10%;
+    width: 100%;
+}
+.logo{
+    width: 70px;
+    height: 80px;
+}
+
+.itemsnav {
+    padding-left: 2.5rem; /* px-10 */
+    padding-right: 2.5rem; /* px-10 */
+    padding-top: 0.25rem; /* py-1 */
+    padding-bottom: 0.25rem; /* py-1 */
+    cursor: pointer;
+    transition: all 0.3s ease; /* transition duration-300 */
+}
+
+.itemsnav:hover {
+    color: #4b5563; /* text-gray-600 */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
