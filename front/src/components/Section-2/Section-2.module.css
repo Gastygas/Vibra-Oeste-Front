@@ -1,0 +1,48 @@
+.container{
+    width: 100%;
+}
+.paddingContainer{
+    padding: 10%;
+}
+.gridSection{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.gridContainer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+  
+.button {
+    margin-top: 5rem;
+    display: flex;
+    font-size: 0.875rem;
+    padding: 0.9375rem 5rem;
+    border-radius: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.125rem;
+}
+.button:hover {
+    transform: scale(0.9);
+}
+.carousel{
+    max-width: 45%;
+    min-width: 45%;
+    min-height: 45%;
+}
+.description{
+    text-align: start;
+    text-wrap: wrap;
+    width: 85%;
+}
+  
+.title {
+    text-align: start;
+    color: var(--primary);
+    padding-bottom: 3.5rem;
+}
+  

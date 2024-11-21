@@ -3,29 +3,25 @@
     padding-top: 1.5rem; /* py-6 */
     padding-bottom: 1.5rem; /* py-6 */
     z-index: 20;
-    background-color: aqua;
+    background-color: #342c31;
     height: 10%;
     width: 100%;
 }
 .logo{
-    width: 70px;
-    height: 80px;
+    position: absolute;
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    margin-top: -0.5%;
 }
-
-.itemsnav {
-    padding-left: 2.5rem; /* px-10 */
-    padding-right: 2.5rem; /* px-10 */
-    padding-top: 0.25rem; /* py-1 */
-    padding-bottom: 0.25rem; /* py-1 */
-    cursor: pointer;
-    transition: all 0.3s ease; /* transition duration-300 */
-}
-
-.itemsnav:hover {
-    color: #4b5563; /* text-gray-600 */
+.logo:hover{
+    transition: 0.5s;
+    opacity: 50%;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    width: 75%;
 }
