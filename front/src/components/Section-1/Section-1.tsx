@@ -4,7 +4,7 @@ const Section1 = () =>{
         <div className={styles.heroBg}>
         <div className={styles.containerGrid}>
             <div className={styles.textOrder}>
-              <h3 style={{ textShadow: '8px 8px 12px rgba(0, 0, 0, 0.7)' }} className={styles.text} >VIBRA OESTE</h3>
+              <h3 style={{ textShadow: '8px 8px 12px rgba(0, 0, 0, 0.7)' }} className={styles.title} >VIBRA OESTE <br /> <span>El sonido que buscas</span></h3>
             </div>
         </div>
       </div >

@@ -21,6 +21,7 @@ body {
   background: var(--background);
   margin: 0px;
   padding: 0px;
+  letter-spacing: 1.5px;
 }
 
 footer {
@@ -87,4 +88,7 @@ h6 {
 /* Estilos para párrafos */
 p {
   font-size: 20px;
+}
+a{
+  text-decoration: none;
 }

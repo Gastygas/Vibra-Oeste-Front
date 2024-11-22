@@ -33,16 +33,19 @@
     justify-content: center; /* justify-center */
 }
   
-.text {
+.title {
     color: rgb(253, 248, 241); /* text-white */
-    font-size: 70px; /* text-[70px] */
+    font-size: 80px; /* text-[70px] */
     text-align: center; /* text-center */
     transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
     transform: scale(1); /* base transform */
     cursor:none;
 }
+.title span{
+    font-size: 35px;
+}
   
-.text:hover {
+.title:hover {
     transform: scale(1.05); /* hover:scale-105 */
     color: rgb(238, 184, 83); /* hover:text-secondary (variable secundaria definida previamente) */
-  }
+}

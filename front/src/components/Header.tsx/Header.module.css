@@ -13,15 +13,16 @@
     height: 10%;
     border-radius: 50%;
     margin-top: -0.5%;
+    transition: 0.5s;
 }
 .logo:hover{
     transition: 0.5s;
-    opacity: 50%;
+    opacity: 60%;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     padding: 0px 20px 0px 20px;
-    width: 75%;
+    width: 80%;
 }
