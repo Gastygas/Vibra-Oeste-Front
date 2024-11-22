@@ -1,0 +1,51 @@
+.heroBg {
+    position: relative; /* relative */
+    height: 100vh; /* h-screen */
+    background-size: cover; /* bg-cover */
+    background-position: center; /* bg-center */
+    display: flex; /* justify-center */
+    justify-content: center;
+    /* background-color: rgb(42, 51, 53); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://res.cloudinary.com/dbmfju6mu/image/upload/v1732221442/b_vqrjvf.png");
+}
+  
+.containerGrid {
+    position: absolute; /* absolute */
+    inset: 0; /* inset-0 */
+    display: flex; /* flex */
+    justify-content: center; /* justify-center */
+    height: 100vh; /* h-screen */
+    max-width: 1536px; /* container */
+    padding-left: 4rem; /* assuming Tailwind's container padding */
+    padding-right: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.textOrder {
+    z-index: 10; /* z-10 */
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+    justify-content: center; /* justify-center */
+}
+  
+.title {
+    color: rgb(253, 248, 241); /* text-white */
+    font-size: 80px; /* text-[70px] */
+    text-align: center; /* text-center */
+    transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
+    transform: scale(1); /* base transform */
+    cursor:none;
+}
+.title span{
+    font-size: 35px;
+}
+  
+.title:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+    color: rgb(238, 184, 83); /* hover:text-secondary (variable secundaria definida previamente) */
+}

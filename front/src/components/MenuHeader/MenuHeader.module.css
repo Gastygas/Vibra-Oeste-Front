@@ -1,0 +1,29 @@
+.itemsnav {
+    padding-left: .5rem; /* px-10 */
+    padding-right: 3.5rem; /* px-10 */
+    padding-top: 0.25rem; /* py-1 */
+    padding-bottom: 0.25rem; /* py-1 */
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* transition duration-300 */
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.904);
+}
+.itemsnav:hover{
+    transition: 1s;
+    font-size: 22px;
+    color: rgb(80, 79, 77);
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* flex-row */
+    justify-content: space-around; /* justify-around */
+    align-items: center; /* items-center */
+}
+
+.menu {
+    font-size: 0.875rem; /* text-sm */
+    display: inline-flex; /* inline-flex */
+    list-style: none;    
+}

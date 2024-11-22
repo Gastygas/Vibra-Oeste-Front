@@ -1,0 +1,94 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variables de color */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --darkBlue: #190045;
+  --lightBlue: #9AEDFF;
+  --cyan: #2CFFDE;
+  --black: #000000;
+  --font-primary: "Figtree", serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-primary), sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: 1.5px;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Estilos para modo claro */
+
+/* Clases personalizadas */
+.text-balance {
+  text-wrap: balance;
+}
+
+.padding-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.container {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4rem; /* 16 in Tailwind = 4rem */
+  padding-right: 4rem;
+  max-width: 1536px; /* screen-2xl in Tailwind */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos para encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 10px;
+}
+
+/* Estilos para párrafos */
+p {
+  font-size: 20px;
+}
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,80 @@
+.container{
+    width: 100%;
+    /* background-color: #342c31; */
+    background-image: url("https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?cs=srgb&dl=pexels-wendywei-1190297.jpg&fm=jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.paddingContainer{
+    padding: 5%;
+}
+.gridSection{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.gridContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+  
+.button {
+    display: flex;
+    font-size: 0.875rem;
+    padding: 0.9375rem 5rem;
+    border-radius: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.125rem;
+    margin-left: 25%;
+    background-color: rgb(243, 205, 135);
+    border: 1px solid black;
+}
+.button:hover {
+    transform: scale(0.9);
+}
+.carousel{
+    padding: 5% 0px 0px 0px;
+    max-width: 45%;
+    min-width: 45%;
+    min-height: 50%;
+}
+.description{
+    font-size: 22px;
+    text-align: start;
+    text-wrap: wrap;
+    width: 90%;
+    color: rgba(255, 255, 255, 0.904);
+    text-shadow: 2px 1px 1px black;
+}
+
+.secondDescription{
+    font-size: 30px;
+    text-align: start;
+    text-wrap: wrap;
+    width: 85%;
+    color: rgb(238, 184, 83);
+    text-shadow: 2px 1px 1px black;
+    transition: 0.8s;
+}
+
+.secondDescription:hover{
+    transition: 0.8s;
+    font-size: 32px;
+    text-shadow: 4px 4px 4px black;
+
+}
+  
+.title {
+    text-align: start;
+    color: rgba(255, 255, 255, 0.904);
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1;
+    text-wrap: wrap;
+    width: 90%;
+}
+  
