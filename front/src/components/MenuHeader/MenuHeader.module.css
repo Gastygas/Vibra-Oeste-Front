@@ -3,7 +3,7 @@
     padding-right: 3.5rem; /* px-10 */
     padding-top: 0.25rem; /* py-1 */
     padding-bottom: 0.25rem; /* py-1 */
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease; /* transition duration-300 */
     text-decoration: none;
@@ -11,7 +11,6 @@
 }
 .itemsnav:hover{
     transition: 1s;
-    font-size: 22px;
     color: rgb(80, 79, 77);
 }
 
