@@ -5,7 +5,8 @@
     z-index: 20;
     background-color: #342c31;
     height: 10%;
-    width: 100%;
+    /* width: 100%; */
+    max-width: 1536px; /* container */
 }
 .logo{
     position: absolute;
