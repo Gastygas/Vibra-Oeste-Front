@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./FormRent.module.css";
 import { validateAddress, validateName, validatePhone } from "@/helpers/validation";
+import { formService } from "@/services/form.service";
 
 export interface IInitialData{
   name:string;
@@ -33,10 +34,16 @@ const FormRent = () => {
     setDirty({...dirty,[e.target.name]: true});
   };
 
-  const handleOnSubmit = (e: React.FormEvent) => {
+  const handleOnSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
     
-    alert("submit")
+    const res = await formService(data)
+    if(res.success){
+      alert("formulario subido correctamente")
+    }
+    else{      
+      alert("error")
+    }
   };
 
   return (
