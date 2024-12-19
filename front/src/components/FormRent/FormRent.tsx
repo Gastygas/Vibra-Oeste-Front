@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./FormRent.module.css";
+import { validateAddress, validateName, validatePhone } from "@/helpers/validation";
 
 export interface IInitialData{
   name:string;
@@ -11,18 +12,31 @@ export interface IInitialData{
 
 const FormRent = () => {
   const initialData = {name: "", surname: "",telephone: "", address:""}
+  const initialDirty = {name: false, surname:false , telephone:false, address:false}
   const [data,setData] = useState<IInitialData>(initialData)
+  const [error, setError] = useState(initialData);
+  const [dirty, setDirty] = useState(initialDirty);
+
+  useEffect(() => {
+    setError({
+      name: validateName(data.name),
+      surname: validateName(data.surname),
+      telephone: validatePhone(data.telephone),
+      address: validateAddress(data.address)
+    })
+  },[data])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({
       ...data, [e.target.name]: e.target.value
-    })
-  }
+    });
+    setDirty({...dirty,[e.target.name]: true});
+  };
 
   const handleOnSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    return true;
+    alert("submit")
   };
 
   return (
@@ -42,6 +56,7 @@ const FormRent = () => {
           value={data.name}
           onChange={handleChange}
           />
+          {dirty.name ? <p className={styles.errorText}>{error.name}</p> : null }
         </div>
         <div>
           <label htmlFor="">Apellido</label>
@@ -53,6 +68,7 @@ const FormRent = () => {
           value={data.surname}
           onChange={handleChange}
           />
+          {dirty.surname ? <p className={styles.errorText}>{error.surname}</p> : null }
         </div>
         <div>
           <label htmlFor="">Telefono</label>
@@ -64,6 +80,7 @@ const FormRent = () => {
           value={data.telephone}
           onChange={handleChange}
           />
+          {dirty.telephone ? <p className={styles.errorText}>{error.telephone}</p> : null }
         </div>
         <div>
           <label htmlFor="">Direccion del evento</label>
@@ -75,10 +92,17 @@ const FormRent = () => {
           value={data.address}
           onChange={handleChange}
           />
+          {dirty.address ? <p className={styles.errorText}>{error.address}</p> : null }
         </div>
-        <div className={styles.divButton}>
+        {error.address || error.name || error.address || error.telephone ? (
+        <div className={styles.divButtonError}>
+        <button disabled={true}>Averiguar Presupuesto</button>
+        </div>
+        ) : (
+          <div className={styles.divButton}>
         <button>Averiguar Presupuesto</button>
         </div>
+        )}
       </form>
       </div>
     </div>
