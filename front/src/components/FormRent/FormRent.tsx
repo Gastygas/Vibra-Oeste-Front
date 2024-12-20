@@ -9,10 +9,13 @@ export interface IInitialData{
   surname:string;
   telephone:string;
   address:string;
+  speakers?:string;
+  console?:string;
+  microphone?:string;
 }
 
 const FormRent = () => {
-  const initialData = {name: "", surname: "",telephone: "", address:""}
+  const initialData: IInitialData = {name: "", surname: "",telephone: "", address:"",microphone:"0",console:"0",speakers:"0"}
   const initialDirty = {name: false, surname:false , telephone:false, address:false}
   const [data,setData] = useState<IInitialData>(initialData)
   const [error, setError] = useState(initialData);
@@ -28,6 +31,8 @@ const FormRent = () => {
   },[data])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.name,e.target.value);
+    
     setData({
       ...data, [e.target.name]: e.target.value
     });
@@ -53,7 +58,7 @@ const FormRent = () => {
         <h3 className={styles.title}>Completa los siguientes datos para alquilar</h3>
       </div>
       <form className={styles.formRent} onSubmit={handleOnSubmit}>
-        <div>
+        <div className={styles.divInput}>
           <label htmlFor="">Nombre</label>
           <input 
           type="text"
@@ -65,7 +70,7 @@ const FormRent = () => {
           />
           {dirty.name ? <p className={styles.errorText}>{error.name}</p> : null }
         </div>
-        <div>
+        <div className={styles.divInput}>
           <label htmlFor="">Apellido</label>
           <input 
           type="text"
@@ -77,7 +82,7 @@ const FormRent = () => {
           />
           {dirty.surname ? <p className={styles.errorText}>{error.surname}</p> : null }
         </div>
-        <div>
+        <div className={styles.divInput}>
           <label htmlFor="">Telefono</label>
           <input 
           type="text"
@@ -89,7 +94,36 @@ const FormRent = () => {
           />
           {dirty.telephone ? <p className={styles.errorText}>{error.telephone}</p> : null }
         </div>
-        <div>
+        <div className={styles.divInput}>
+          <label htmlFor="">Equipo</label>
+          <div className={styles.sound}>
+        <div onChange={handleChange}>
+        <h4>parlantes</h4>
+        <select name="speakers" id="speakers">
+          <option value="0">0</option>
+          <option value="1">1 </option>
+          <option value="2">2 </option>
+        </select>
+        </div>
+        <div onChange={handleChange}>
+        <h4>consola</h4>
+        <select name="console" id="console">
+          <option value="0">0</option>
+          <option value="1">1 </option>
+        </select>
+        </div>
+        <div onChange={handleChange}>
+        <h4>microfonos</h4>
+        <select name="microphone" id="microphone">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+        </div>
+        </div>
+          {dirty.telephone ? <p className={styles.errorText}>{error.telephone}</p> : null }
+        </div>
+        <div className={styles.divInput}>
           <label htmlFor="">Direccion del evento</label>
           <input 
           type="text"
