@@ -30,7 +30,7 @@ const FormRent = () => {
     })
   },[data])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {    
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {        
     setData({
       ...data, [e.target.name]: e.target.value
     });
@@ -40,12 +40,14 @@ const FormRent = () => {
   const handleOnSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
     
-    const res = await formService(data)
+    const res= await formService(data)
     if(res.success){
       alert("formulario subido correctamente")
     }
     else{      
-      alert("error")
+      console.log(res);
+      
+      // return alert (`Completa correctamente: ${res.error.map((err:any) => err.property)}`)
     }
   };
 
@@ -112,7 +114,7 @@ const FormRent = () => {
         </div>
         <div onChange={handleChange}>
         <h4>microfonos</h4>
-        <select name="microphone" id="microphone">
+        <select name="microphones" id="microphones">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
