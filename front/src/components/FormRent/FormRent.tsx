@@ -11,11 +11,11 @@ export interface IInitialData{
   address:string;
   speakers?:string;
   console?:string;
-  microphone?:string;
+  microphones?:string;
 }
 
 const FormRent = () => {
-  const initialData: IInitialData = {name: "", surname: "",telephone: "", address:"",microphone:"0",console:"0",speakers:"0"}
+  const initialData: IInitialData = {name: "", surname: "",telephone: "", address:"",microphones:"0",console:"0",speakers:"0"}
   const initialDirty = {name: false, surname:false , telephone:false, address:false}
   const [data,setData] = useState<IInitialData>(initialData)
   const [error, setError] = useState(initialData);
