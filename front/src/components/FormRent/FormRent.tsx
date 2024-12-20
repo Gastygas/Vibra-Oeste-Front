@@ -30,9 +30,7 @@ const FormRent = () => {
     })
   },[data])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.name,e.target.value);
-    
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {    
     setData({
       ...data, [e.target.name]: e.target.value
     });
