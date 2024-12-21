@@ -10,7 +10,7 @@ export const formService = async(form:IForm) => {
             body: JSON.stringify(form)
         })
         return await res.json()
-    } catch (e:any) {
+    } catch (e:unknown) {
         return e
     }
 }
