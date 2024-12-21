@@ -64,27 +64,26 @@
     border-radius: 5px;
     width: 50%;
     height: 5vh;
+    margin: 40px auto 0px auto;
     background-color: rgb(33, 83, 95);
     color: wheat;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-/* .formRent button{
-    margin-top: 40px;
-    border-radius: 5px;
-    width: 50%;
-    height: 5vh;
-    background-color: rgb(33, 83, 95);
-    color: wheat;
-    cursor: pointer;
-} */
+
 .divButtonError button{
     cursor:not-allowed;
     color: wheat;
     background-color: rgb(91, 114, 119);
-    margin-top: 40px;
+    margin: 40px auto 0px auto;
     border-radius: 5px;
     width: 50%;
     height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .divButton button:hover{
