@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./FormRent.module.css";
 import { validateAddress, validateName, validatePhone } from "@/helpers/validation";
 import { formService } from "@/services/form.service";
+import { Loader } from '@googlemaps/js-api-loader'
 
 export interface IInitialData{
   name:string;
@@ -12,14 +13,18 @@ export interface IInitialData{
   speakers?:string;
   console?:string;
   microphones?:string;
+  mapLocation?: {lat:number; lng: number};
+  addressMaps?:string;
 }
 
 const FormRent = () => {
-  const initialData: IInitialData = {name: "", surname: "",telephone: "", address:"",microphones:"0",console:"0",speakers:"0"}
+  const initialData: IInitialData = {name: "", surname: "",telephone: "", address:"",microphones:"0",console:"0",speakers:"0",mapLocation:{lat: 24, lng: 42}, addressMaps: ""}
   const initialDirty = {name: false, surname:false , telephone:false, address:false}
   const [data,setData] = useState<IInitialData>(initialData)
   const [error, setError] = useState(initialData);
   const [dirty, setDirty] = useState(initialDirty);
+  const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [marker, setMarker] = useState<google.maps.Marker | null>(null);
 
   useEffect(() => {
     setError({
@@ -29,6 +34,66 @@ const FormRent = () => {
       address: validateAddress(data.address)
     })
   },[data])
+
+  useEffect(() => {
+    const loader = new Loader({
+      apiKey: `${process.env.NEXT_PUBLIC_MAPS_KEY}`,
+      version: 'weekly',
+      libraries: ['places'],
+    });
+    loader.load().then(() => {
+      initMap();
+    });
+  })
+
+  const initMap = () => {
+    const mapOptions = {
+      center: { lat: -38.005965, lng: -57.544678 },
+      zoom: 15,
+    };
+    const mapDiv = document.getElementById('map') as HTMLElement;
+    const newMap = new google.maps.Map(mapDiv, mapOptions);
+    setMap(newMap);
+
+    const input = document.getElementById('addressMaps') as HTMLInputElement;
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      fields: ['address_components', 'geometry'],
+      types: ['address'],
+    })
+
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+      if (place.geometry && place.geometry.location) {
+        const location = place.geometry.location;
+        const newCoordinates = { lat: location.lat(), lng: location.lng() };
+        newMap.setCenter(location);
+        if (marker) {
+          marker.setPosition(newCoordinates)
+        } else {
+          const newMarker = new google.maps.Marker({
+            position: newCoordinates,
+            map: newMap,
+          });
+          setMarker(newMarker);
+        }
+        const streetNumber = getAddressComponent(place, 'street_number') || '';
+        const route = getAddressComponent(place, 'route') || '';
+        const fullAddress = `${route} ${streetNumber} `.trim();
+        setData(prevData => ({
+          ...prevData,
+          address: fullAddress,
+          mapLocation: newCoordinates,
+        }));
+      }
+    });
+  };
+
+  const getAddressComponent = (place: google.maps.places.PlaceResult, type: string) => {
+    const component = place.address_components?.find((comp) => comp.types.includes(type));
+    return component ? component.long_name : '';
+  };
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {        
     setData({
@@ -133,6 +198,16 @@ const FormRent = () => {
           value={data.address}
           onChange={handleChange}
           />
+          {/* <label htmlFor="addresMaps" className='mb-6 text-center'>Busca tu direccion aquí</label>
+            <input
+            type="text"
+            id="addressMaps"
+            name="addressMaps"
+            onChange={handleChange}
+            value={data.addressMaps}
+            placeholder="Dirección"
+          className={styles.inputStyle} />
+          <div id="map" style={{ height: '400px', width: '800px' }}></div> */}
           {dirty.address ? <p className={styles.errorText}>{error.address}</p> : null }
         </div>
         {error.address || error.name || error.address || error.telephone ? (
