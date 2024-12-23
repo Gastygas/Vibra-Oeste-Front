@@ -54,6 +54,8 @@ const Form = () => {
     const mapDiv = document.getElementById('map') as HTMLElement;
     const newMap = new google.maps.Map(mapDiv, mapOptions);
     setMap(newMap);
+    console.log(map);
+    
 
     const input = document.getElementById('addressMaps') as HTMLInputElement;
     const autocomplete = new google.maps.places.Autocomplete(input, {
