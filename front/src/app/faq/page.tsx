@@ -1,11 +1,14 @@
 import Header from "@/components/Header/Header"
+import Faq from "@/components/Faq/Faq"
+import Footer from "@/components/Footer/Footer"
 
-const Faq = () =>{
+const page = () =>{
     return(
         <div>
             <Header/>
-            Faq
+            <Faq/>
+            <Footer/>
         </div>
     )
 }
-export default Faq
+export default page

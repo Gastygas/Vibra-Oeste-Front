@@ -17,7 +17,7 @@ export interface IInitialData{
   addressMaps?:string;
 }
 
-const FormRent = () => {
+const Form = () => {
   const initialData: IInitialData = {name: "", surname: "",telephone: "", address:"",microphones:"0",console:"0",speakers:"0",mapLocation:{lat: 24, lng: 42}, addressMaps: ""}
   const initialDirty = {name: false, surname:false , telephone:false, address:false}
   const [data,setData] = useState<IInitialData>(initialData)
@@ -224,4 +224,4 @@ const FormRent = () => {
     </div>
   );
 };
-export default FormRent;
+export default Form;

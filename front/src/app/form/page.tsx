@@ -1,14 +1,14 @@
 import Footer from "@/components/Footer/Footer"
-import FormRent from "@/components/FormRent/FormRent"
+import Form from "@/components/FormRent/FormRent"
 import Header from "@/components/Header/Header"
 
-const Form = () =>{
+const page = () =>{
     return(
         <div>
             <Header/>
-            <FormRent/>
+            <Form/>
             <Footer/>
         </div>
     )
 }
-export default Form
+export default page
