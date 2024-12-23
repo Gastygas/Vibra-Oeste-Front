@@ -1,0 +1,48 @@
+.section{
+    height: 100vh;
+    padding: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://res.cloudinary.com/dbmfju6mu/image/upload/v1732248331/c_jqnqsu.png");
+    background-position: center;
+    background-size: cover;
+}
+.title{
+    text-align: center;
+    font-size: 45px;
+    color: rgb(238, 184, 83);
+    text-shadow: 1px 2px 2px black;
+}
+
+.faqList{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.buttonList{
+    margin: 4vh 0px 4vh 0px;
+    background-color: #8f7a7b ;
+    width: 90%;
+}
+.buttonList button{
+    background-color: rgba(61, 52, 36, 0.733);
+    border: 0px;
+    width: 100%;
+    height: 5vh;
+    font-size: 17px;
+    color: wheat;
+    text-shadow: 1px 2px 2px black;
+    text-align: start;
+    padding-left: 10px;
+}
+.buttonList button:hover{
+    background-color: rgba(61, 52, 36, 0.438);
+    cursor: pointer;
+}
+.answer{
+    color: white;
+    text-shadow: 1px 2px 2px black;
+    padding-left: 12px;
+    font-size: 18px;
+}

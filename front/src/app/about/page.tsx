@@ -1,6 +1,6 @@
 import Header from "@/components/Header/Header"
 
-const About = () => {
+const page = () => {
     return(
         <div>
             <Header/>
@@ -8,4 +8,4 @@ const About = () => {
         </div>
     )
 }
-export default About
+export default page
