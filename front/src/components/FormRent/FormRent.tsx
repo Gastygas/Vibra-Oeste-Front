@@ -191,6 +191,15 @@ const Form = () => {
           {dirty.telephone ? <p className={styles.errorText}>{error.telephone}</p> : null }
         </div>
         <div className={styles.divInput}>
+          <label htmlFor="">Horario</label>
+          <div>
+            <input type="datetime-local" name="startHour" id="startHour" />
+          </div>
+          <div>
+            <input type="datetime-local" name="endHour" id="endHour" />
+          </div>
+        </div>
+        <div className={styles.divInput}>
           <label htmlFor="">Direccion del evento</label>
           <input 
           type="text"
