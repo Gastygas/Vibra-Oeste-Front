@@ -237,7 +237,7 @@ const Form = () => {
           type="text"
           name="address"
           id="address" 
-          placeholder="Ej: Av cordoba 182"
+          placeholder="Ej: Av cordoba"
           value={data.address}
           onChange={handleChange}
           />
