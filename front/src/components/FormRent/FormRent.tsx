@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./FormRent.module.css";
 import { validateAddress, validateCity, validateName, validateNumberAddress, validatePhone, validateStartHour } from "@/helpers/validation";
 import { formService } from "@/services/form.service";
-import { Loader } from '@googlemaps/js-api-loader'
+// import { Loader } from '@googlemaps/js-api-loader'
 
 export interface IInitialData{
   name:string;
@@ -27,8 +27,8 @@ const Form = () => {
   const [data,setData] = useState<IInitialData>(initialData)
   const [error, setError] = useState(initialData);
   const [dirty, setDirty] = useState(initialDirty);
-  const [map, setMap] = useState<google.maps.Map | null>(null);
-  const [marker, setMarker] = useState<google.maps.Marker | null>(null);
+  // const [map, setMap] = useState<google.maps.Map | null>(null);
+  // const [marker, setMarker] = useState<google.maps.Marker | null>(null);
 
 
   useEffect(() => {
