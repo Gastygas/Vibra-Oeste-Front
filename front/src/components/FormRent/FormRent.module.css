@@ -21,7 +21,7 @@
     border-radius: 10px;
 }
 .titlecontainer{
-    padding: 40px;
+    padding: 25px 40px 25px 40px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -55,10 +55,31 @@
     padding: 1px;
     margin: 5px 0px 5px 0px;
 }
+.divAddress{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.divTime{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.divTime div{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+.divTime div h4{
+    font-weight: 600;
+    margin: 5px;
+    text-transform: capitalize;
+}
 .divButton{
     display: flex;
     align-items: center;
 }
+
 .divButton button{
     margin-top: 40px;
     border-radius: 5px;
