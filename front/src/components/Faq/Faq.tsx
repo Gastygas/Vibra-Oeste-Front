@@ -21,7 +21,7 @@ const faqs = [
     },
     {
       question: "¿Hay algun numero de telefono?",
-      answer: "Si. Luego de completar el formulario de alquilar, el mismo te enviara al whatsapp.",
+      answer: "Si. '+54 9 11 3602 1862' Gaston. Recorda que luego de completar el formulario de alquilar, el mismo te enviara al whatsapp con el mensaje personalizado.",
     },
   ];
 
