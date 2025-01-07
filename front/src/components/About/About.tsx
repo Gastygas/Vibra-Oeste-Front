@@ -20,7 +20,7 @@ const About = () => {
     };
 
 
-    const handleOnSubmit = async(e:any) => {
+    const handleOnSubmit = async(e:React.FormEvent) => {
         e.preventDefault()
         try {
             const res = await contactForm(data)
