@@ -26,7 +26,7 @@ const About = () => {
             const res = await contactForm(data)
             if(res.success) alert("Contacto subido correctamente, pronto te enviare un mail")
             else{        
-                alert(`Te faltan estos datos: ${res.error.map((e:any) => e.property)} `)
+                alert(`Por favor, revisa bien tus datos`)
             }
         } catch (e:unknown) {
             console.log(e);
