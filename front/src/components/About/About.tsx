@@ -1,5 +1,39 @@
+"use client"
+import { contactForm } from "@/services/contact.service";
 import styles from "./About.module.css"
+import { ChangeEvent, useState } from "react";
+interface IData {
+    email:string;
+    message:string;
+}
 const About = () => {
+    const initialData:IData = {email:"",message:""}
+    const initialDirty = {email:false,message:false}
+    const [data,setData] = useState<IData>(initialData)
+    const [dirty, setDirty] = useState(initialDirty);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {            
+    setData({
+      ...data, [e.target.name]: e.target.value
+    });
+    setDirty({...dirty,[e.target.name]: true});
+    };
+
+
+    const handleOnSubmit = async(e:React.FormEvent) => {
+        e.preventDefault()
+        try {
+            const res = await contactForm(data)
+            if(res.success) alert("Contacto subido correctamente, pronto te enviare un mail")
+            else{        
+                alert(`Por favor, revisa bien tus datos`)
+            }
+        } catch (e:unknown) {
+            console.log(e);
+            return alert("Error en base de datos, intenta nuevamente en un momento")
+        }
+    }
+
     return (
         <div className={styles.container}>
             <h3>Sobre Mi</h3>
@@ -10,14 +44,14 @@ const About = () => {
                 <p>Tengo conocimiento solido de 1 año en NextJS, NestJS, TypeScript, React, NodeJS, JavaScript, PostgreSQL entre otras.</p>
                 <p>Completa el siguiente formulario si queres contactarte conmigo:</p>
                 <div>
-                    <form className={styles.form} action="">
+                    <form className={styles.form} onSubmit={handleOnSubmit}>
                         <div>
                             <label htmlFor="">email</label>
-                            <input type="text" name="" id="" />
+                            <input type="text" name="email" id="email" onChange={handleChange} value={data.email} />
                         </div>
                         <div>
                             <label htmlFor="">Por que y Para que me contactas?</label>
-                            <textarea name="" id=""></textarea>
+                            <textarea name="message" id="message" onChange={handleChange} value={data.message}></textarea>
                         </div>
                         <button>Enviar</button>
                     </form>

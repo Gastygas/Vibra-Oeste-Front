@@ -63,9 +63,7 @@
 
 .secondDescription:hover{
     transition: 0.8s;
-    font-size: 32px;
     text-shadow: 4px 4px 4px black;
-
 }
   
 .title {
