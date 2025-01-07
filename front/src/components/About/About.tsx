@@ -28,7 +28,7 @@ const About = () => {
             else{        
                 alert(`Te faltan estos datos: ${res.error.map((e:any) => e.property)} `)
             }
-        } catch (e:any) {
+        } catch (e:unknown) {
             console.log(e);
             return alert("Error en base de datos, intenta nuevamente en un momento")
         }
