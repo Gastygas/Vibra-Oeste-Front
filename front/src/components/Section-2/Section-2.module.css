@@ -32,15 +32,63 @@
     margin-left: 25%;
     background-color: rgb(243, 205, 135);
     border: 1px solid black;
+    animation: move-button linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 15%;
+    animation: hover-button linear 2s 8s infinite;
 }
-.button:hover {
-    transform: scale(0.9);
+.button:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+@keyframes move-button {
+    from{
+        transform: translateY(100px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes hover-button {
+   50%{
+    scale: 1.2;
+   }
 }
 .carousel{
     padding: 5% 0px 0px 0px;
     max-width: 45%;
     min-width: 45%;
     min-height: 50%;
+    animation: carousel-appears linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+}
+
+@keyframes carousel-appears {
+    from{
+        transform: translateX(500px);
+        scale: .5;
+        opacity: .9;
+    }
+    to{
+        transform: translateX(0px);
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes move-text {
+    from{
+        transform: translateX(-500px);
+        scale: .5;
+        opacity: .9;
+    }
+    to{
+        transform: translateX(0px);
+        scale: 1;
+        opacity: 1;
+    }
 }
 .description{
     font-size: 22px;
@@ -49,6 +97,9 @@
     width: 90%;
     color: rgba(255, 255, 255, 0.904);
     text-shadow: 2px 1px 1px black;
+    animation: move-text linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
 
 .secondDescription{
@@ -59,6 +110,9 @@
     color: rgb(238, 184, 83);
     text-shadow: 2px 1px 1px black;
     transition: 0.8s;
+    animation: move-text linear both;
+    animation-timeline: view();
+    animation-range: entry 15% cover 20%;
 }
 
 .secondDescription:hover{
@@ -74,5 +128,9 @@
     line-height: 1;
     text-wrap: wrap;
     width: 90%;
+    animation: move-text linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
 }
+
   
