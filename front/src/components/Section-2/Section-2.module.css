@@ -67,7 +67,7 @@
 
 @keyframes carousel-appears {
     from{
-        transform: translateX(500px);
+        transform: translateX(1px);
         scale: .5;
         opacity: .9;
     }
@@ -80,12 +80,10 @@
 
 @keyframes move-text {
     from{
-        transform: translateX(-500px);
         scale: .5;
-        opacity: .9;
+        opacity: .7;
     }
     to{
-        transform: translateX(0px);
         scale: 1;
         opacity: 1;
     }
