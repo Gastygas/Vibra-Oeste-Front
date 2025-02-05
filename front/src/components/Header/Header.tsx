@@ -3,6 +3,7 @@ import Image from "next/image"
 import styles from "./Header.module.css"
 import MenuHeader from "../MenuHeader/MenuHeader"
 import logo from "../../assets/logo.png"
+
 const Header = () => {
     return(
         <div className={styles.navBg}>

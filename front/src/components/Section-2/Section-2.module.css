@@ -14,6 +14,123 @@
     flex-direction: row;
     width: 100%;
 }
+@media (max-width:600px){
+    .gridSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .gridContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .carousel{
+        animation: none;
+        padding: 3vh 0px 0px 0px;
+        width: 30vh;
+    }
+    .description{
+        font-size: 22px;
+        text-align: center;
+        text-wrap: wrap;
+        width: 90%;
+        color: rgba(255, 255, 255, 0.904);
+        text-shadow: 2px 1px 1px black;
+        animation: move-text linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+    }
+    
+    .secondDescription{
+        font-size: 30px;
+        text-align: center;
+        text-wrap: wrap;
+        width: 85%;
+        color: rgb(238, 184, 83);
+        text-shadow: 2px 1px 1px black;
+        transition: 0.8s;
+        animation: move-text linear both;
+        animation-timeline: view();
+        animation-range: entry 15% cover 20%;
+    }
+    
+    .secondDescription:hover{
+        transition: 0.8s;
+        text-shadow: 4px 4px 4px black;
+    }
+      
+    .title {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.904);
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 1;
+        text-wrap: wrap;
+        width: 90%;
+        animation: move-text linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+    }
+    
+}
+
+@media (min-width: 601px){
+    .carousel{
+        padding: 5% 0px 0px 0px;
+        max-width: 45%;
+        min-width: 45%;
+        min-height: 50%;
+        animation: carousel-appears linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+    }
+    .description{
+        font-size: 22px;
+        text-align: start;
+        text-wrap: wrap;
+        width: 90%;
+        color: rgba(255, 255, 255, 0.904);
+        text-shadow: 2px 1px 1px black;
+        animation: move-text linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+    }
+    
+    .secondDescription{
+        font-size: 30px;
+        text-align: start;
+        text-wrap: wrap;
+        width: 85%;
+        color: rgb(238, 184, 83);
+        text-shadow: 2px 1px 1px black;
+        transition: 0.8s;
+        animation: move-text linear both;
+        animation-timeline: view();
+        animation-range: entry 15% cover 20%;
+    }
+    
+    .secondDescription:hover{
+        transition: 0.8s;
+        text-shadow: 4px 4px 4px black;
+    }
+      
+    .title {
+        text-align: start;
+        color: rgba(255, 255, 255, 0.904);
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 1;
+        text-wrap: wrap;
+        width: 90%;
+        animation: move-text linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
+    }
+    
+}
+
 .gridContainer{
     display: flex;
     flex-direction: column;
@@ -29,7 +146,6 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     font-size: 1.125rem;
-    margin-left: 25%;
     background-color: rgb(243, 205, 135);
     border: 1px solid black;
     animation: move-button linear both;
@@ -55,15 +171,7 @@
     scale: 1.2;
    }
 }
-.carousel{
-    padding: 5% 0px 0px 0px;
-    max-width: 45%;
-    min-width: 45%;
-    min-height: 50%;
-    animation: carousel-appears linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
-}
+
 
 @keyframes carousel-appears {
     from{
@@ -87,48 +195,6 @@
         scale: 1;
         opacity: 1;
     }
-}
-.description{
-    font-size: 22px;
-    text-align: start;
-    text-wrap: wrap;
-    width: 90%;
-    color: rgba(255, 255, 255, 0.904);
-    text-shadow: 2px 1px 1px black;
-    animation: move-text linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
-}
-
-.secondDescription{
-    font-size: 30px;
-    text-align: start;
-    text-wrap: wrap;
-    width: 85%;
-    color: rgb(238, 184, 83);
-    text-shadow: 2px 1px 1px black;
-    transition: 0.8s;
-    animation: move-text linear both;
-    animation-timeline: view();
-    animation-range: entry 15% cover 20%;
-}
-
-.secondDescription:hover{
-    transition: 0.8s;
-    text-shadow: 4px 4px 4px black;
-}
-  
-.title {
-    text-align: start;
-    color: rgba(255, 255, 255, 0.904);
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1;
-    text-wrap: wrap;
-    width: 90%;
-    animation: move-text linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 40%;
 }
 
   

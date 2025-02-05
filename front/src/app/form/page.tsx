@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer/Footer"
 import Form from "@/components/FormRent/FormRent"
 import Header from "@/components/Header/Header"
 
@@ -7,7 +6,6 @@ const page = () =>{
         <div>
             <Header/>
             <Form/>
-            <Footer/>
         </div>
     )
 }

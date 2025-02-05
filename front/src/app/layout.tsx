@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from 'next/font/google';
 import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className={figtree.className}>
       {/* <ToastContainer /> */}
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
     // </AuthProvider>

@@ -2,17 +2,27 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
     padding-top: 1.5rem; /* py-6 */
     padding-bottom: 1.5rem; /* py-6 */
-    z-index: 20;
     background-color: #342c31;
-    height: 10%;
     /* width: 100%; */
     width: 100%;/* container */
-    position: sticky;
-    top: 0;
-    animation: enhance-header linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 200px;
-    z-index: 1;
+}
+@media (min-width:600px){
+    .navBg {
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+        padding-top: 1.5rem; /* py-6 */
+        padding-bottom: 1.5rem; /* py-6 */
+        z-index: 20;
+        background-color: #342c31;
+        height: 10%;
+        /* width: 100%; */
+        width: 100%;/* container */
+        position: sticky;
+        top: 0;
+        animation: enhance-header linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0 200px;
+        z-index: 1;
+    }
 }
 @keyframes enhance-header {
     to{
@@ -24,7 +34,6 @@
     }
 }
 .logo{
-    position: absolute;
     width: 70px;
     height: 60px;
     border-radius: 50%;
