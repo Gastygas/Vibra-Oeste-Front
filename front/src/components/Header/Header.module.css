@@ -20,7 +20,7 @@
         top: 0;
         animation: enhance-header linear both;
         animation-timeline: scroll(root block);
-        animation-range: 0 200px;
+        animation-range: 100px 300px;
         z-index: 1;
     }
 }
@@ -30,7 +30,7 @@
         backdrop-filter: blur(5px);
         font-size: 18px;
         color: black;
-        opacity: .7;
+        opacity: .0;
     }
 }
 .logo{

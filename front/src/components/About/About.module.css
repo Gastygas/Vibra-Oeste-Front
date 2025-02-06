@@ -95,3 +95,22 @@
 .form button:hover{
     background-color: #9e46509c ;
 }
+
+@media (max-width:500px){
+    .container{
+        width: auto;
+    }
+    .about{
+        border: 0px;
+        border-radius: 5px;
+        margin: 10vh auto 15vh auto;
+        height: auto;
+        min-width: 40vh;
+        text-align: center;
+        background-color: #8f7a7be8 ;
+        border-radius: 5px;
+        color: white;
+        text-shadow: 1px 2px 2px black;
+        padding: 20px;
+    }
+}
